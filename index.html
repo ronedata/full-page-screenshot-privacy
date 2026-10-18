@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Page Capture Privacy Policy</title>
+<meta name="description" content="The privacy policy for the Full Page Capture browser extension.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --surface-2: #edf1f5;
+    --text: #16202f;
+    --muted: #57657a;
+    --faint: #8592a3;
+    --border: #e0e5ec;
+    --border-strong: #c9d1dc;
+    --accent: #2563a8;
+    --accent-strong: #184d85;
+    --accent-tint: #e6f0fa;
+    --accent-tint-border: #c3dcf2;
+    --mono-ink: #3a4657;
+    --shadow: 0 1px 2px rgba(22, 32, 47, 0.04), 0 8px 24px -12px rgba(22, 32, 47, 0.10);
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1219;
+      --surface: #141b26;
+      --surface-2: #1a2330;
+      --text: #e9edf3;
+      --muted: #a3aec0;
+      --faint: #71809a;
+      --border: #253143;
+      --border-strong: #32405a;
+      --accent: #5b9bdc;
+      --accent-strong: #8ec0ec;
+      --accent-tint: #122233;
+      --accent-tint-border: #1f3c58;
+      --mono-ink: #c3cbdb;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -14px rgba(0, 0, 0, 0.55);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0d1219;
+    --surface: #141b26;
+    --surface-2: #1a2330;
+    --text: #e9edf3;
+    --muted: #a3aec0;
+    --faint: #71809a;
+    --border: #253143;
+    --border-strong: #32405a;
+    --accent: #5b9bdc;
+    --accent-strong: #8ec0ec;
+    --accent-tint: #122233;
+    --accent-tint-border: #1f3c58;
+    --mono-ink: #c3cbdb;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -14px rgba(0, 0, 0, 0.55);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent-tint-border); }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 64px) 24px 96px;
+  }
+
+  header.doc-head {
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-tint);
+    flex-shrink: 0;
+  }
+
+  h1 {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4.4vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .doc-sub {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0;
+    max-width: 58ch;
+  }
+
+  .doc-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+
+  .doc-meta strong { color: var(--muted); font-weight: 600; }
+
+  .glance {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 0 40px;
+    box-shadow: var(--shadow);
+  }
+
+  .glance-tile {
+    background: var(--surface);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .glance-value {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: var(--accent-strong);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .glance-label {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  @media (max-width: 620px) {
+    .glance { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  article { font-family: "Source Serif 4", Georgia, serif; }
+
+  article > section { margin: 0 0 40px; }
+
+  h2 {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    letter-spacing: -0.005em;
+    color: var(--text);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  h2 .num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 500;
+    color: var(--faint);
+    font-size: 15px;
+    margin-right: 10px;
+  }
+
+  p { margin: 0 0 14px; color: var(--text); max-width: 66ch; }
+  p.lead {
+    font-size: 18px;
+    color: var(--muted);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 500;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  strong { font-weight: 600; color: var(--text); }
+
+  a { color: var(--accent-strong); text-decoration-color: var(--accent-tint-border); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: currentColor; }
+
+  ul.doc-list {
+    margin: 0 0 14px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 66ch;
+  }
+
+  ul.doc-list li {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  ul.doc-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--accent-tint);
+    border: 1.5px solid var(--accent);
+  }
+
+  code, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.86em;
+    color: var(--mono-ink);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.08em 0.42em;
+    white-space: nowrap;
+  }
+
+  .callout {
+    background: var(--accent-tint);
+    border: 1px solid var(--accent-tint-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .callout-mark {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    background: var(--surface);
+    border: 1px solid var(--accent-tint-border);
+    border-radius: 999px;
+    padding: 4px 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .callout p { margin: 0; color: var(--text); max-width: none; }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 14.5px;
+    min-width: 560px;
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+    background: var(--surface-2);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  td.perm { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: var(--accent-strong); font-weight: 600; white-space: nowrap; }
+  td.why { color: var(--muted); font-family: "Source Serif 4", Georgia, serif; font-size: 15px; line-height: 1.55; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--faint);
+  }
+
+  footer .brandmark { display: flex; align-items: center; gap: 8px; color: var(--muted); font-weight: 600; }
+
+  .brandmark svg { flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="doc-head">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>Your screenshots stay on your device, unless you send them to your own Drive.</h1>
+    <p class="doc-sub">What Full Page Capture stores, when it reads a page, and exactly what happens when you choose to send a capture to Google Drive.</p>
+    <div class="doc-meta">
+      <span><strong>Last updated</strong> — October 2026</span>
+      <span><strong>Applies to</strong> — Full Page Capture — Screenshot, all versions</span>
+      <span><strong>Our servers</strong> — none</span>
+    </div>
+  </header>
+
+  <div class="glance">
+    <div class="glance-tile">
+      <span class="glance-value">0</span>
+      <span class="glance-label">servers of ours this extension talks to</span>
+    </div>
+    <div class="glance-tile">
+      <span class="glance-value">0</span>
+      <span class="glance-label">analytics, trackers, or ad scripts</span>
+    </div>
+    <div class="glance-tile">
+      <span class="glance-value">Local</span>
+      <span class="glance-label">by default — captures live in your browser and downloads folder</span>
+    </div>
+    <div class="glance-tile">
+      <span class="glance-value">Opt-in</span>
+      <span class="glance-label">Google Drive upload only happens when you click "Send to Drive"</span>
+    </div>
+  </div>
+
+  <article>
+    <section>
+      <p class="lead">Full Page Capture takes screenshots and screen recordings of the page you're viewing, lets you annotate them, and exports the result as PNG, JPG, PDF, or video. Every one of those steps runs inside your browser. The extension has no server of its own, and the only outside service it will ever talk to is Google Drive — and only once you explicitly ask it to.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">01</span>What gets captured, and when</h2>
+      <p>A capture — full page, visible area, a selected region, a hovered element, a scrolling panel, or a screen recording — only starts when you trigger it yourself: a toolbar click, a keyboard shortcut, or a right-click menu item. The extension does not watch, read, or capture anything in the background.</p>
+      <p>Capturing a page necessarily means reading its visible content so it can be turned into an image or video — that's what the <code>activeTab</code> and <code>scripting</code> permissions are for. That content is processed entirely in memory inside your browser to build the capture; it is not sent anywhere as part of this step.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">02</span>Where a finished capture lives</h2>
+      <ul class="doc-list">
+        <li><strong>While you're editing it</strong> — the image or recording is held in the extension's own tab (the editor), and in your browser's local, per-origin storage (including the Origin Private File System used to write a recording to disk chunk-by-chunk, so a crash doesn't lose the whole thing).</li>
+        <li><strong>"Recent" captures</strong> — if you turn this on in Settings, finished captures are kept in your browser's local storage so you can reopen them later. This is local-only and off by default; turning it off clears what's there.</li>
+        <li><strong>Exporting</strong> — clicking Download, Copy, or Save hands the file to Chrome's/Edge's own <code>downloads</code> API (saved to your normal downloads folder) or your system clipboard. Nothing about that file passes through us.</li>
+        <li><strong>Settings</strong> (output format, shortcuts, defaults) are saved with <code>chrome.storage.sync</code> — the browser's own built-in setting sync tied to your browser profile, not a service we run or can see.</li>
+      </ul>
+      <p>None of the above ever leaves your device unless you take the separate, explicit action described in section 03.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">03</span>Sending a capture to Google Drive (optional)</h2>
+      <p>"Send to Drive" is the one feature that reaches outside your browser, and only runs when you click it.</p>
+      <ul class="doc-list">
+        <li><strong>Sign-in</strong> — the extension uses Chrome's/Edge's built-in <code>identity</code> API to get a Google sign-in token. You see Google's own consent screen; the extension never sees your Google password.</li>
+        <li><strong>Why the broad Drive scope</strong> — the permission Google shows is the full <code>drive</code> scope rather than the narrower "files this app created" scope. That's because this feature lets you pick an existing folder in your Drive to upload into, and the narrow scope can't see or write into a folder it didn't create itself. The extension still only uploads the one capture file you asked to send — it does not list, read, or modify anything else in your Drive — but the permission screen can't express that distinction, so the broader grant is what Google shows.</li>
+        <li><strong>What's uploaded</strong> — exactly the capture you were working on (the image or video file), uploaded directly from your browser to <code>googleapis.com</code> (Google's own servers) into your own Google account. It never passes through a server belonging to us, because we don't have one.</li>
+        <li><strong>The sign-in token</strong> — kept by the browser's identity API for this purpose; the extension does not copy it elsewhere.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">04</span>Where it doesn't go</h2>
+      <div class="callout">
+        <span class="callout-mark">Verifiable</span>
+        <p>Search the extension's source and the only network calls you'll find are to <code>googleapis.com</code> / <code>accounts.google.com</code> for the Drive feature in section 03, and (outside the version submitted to this store listing) a version check against this project's own public GitHub repository. There is no analytics call, no ad network, no crash-reporting service, and no server of ours anywhere in the code — because none exists for it to call.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">05</span>Permissions, and why each one exists</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Permission</th><th>What it's for</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="perm">activeTab / scripting</td>
+              <td class="why">Reading the current page's content and layout so it can be turned into a screenshot, and running the on-page tools (area select, element hover, the annotation overlay) when you invoke them.</td>
+            </tr>
+            <tr>
+              <td class="perm">downloads</td>
+              <td class="why">Saving an exported PNG, JPG, PDF, or recording to your normal downloads folder when you click Download.</td>
+            </tr>
+            <tr>
+              <td class="perm">storage</td>
+              <td class="why">Saving your settings (<code>chrome.storage.sync</code>) and, if you enable it, your "Recent" captures list (local only), as described in section 02.</td>
+            </tr>
+            <tr>
+              <td class="perm">identity</td>
+              <td class="why">Getting a Google sign-in token for "Send to Drive" — see section 03. Not used anywhere else.</td>
+            </tr>
+            <tr>
+              <td class="perm">notifications</td>
+              <td class="why">Showing a system notification when a long capture, recording, or Drive upload finishes, in case you've switched to another tab or window.</td>
+            </tr>
+            <tr>
+              <td class="perm">host access<br><span class="mono" style="white-space:normal">googleapis.com</span></td>
+              <td class="why">Talking directly to Google's Drive API for section 03's upload. No other host is contacted.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">06</span>Changes to this policy</h2>
+      <p>If this ever changes, the date at the top of the page changes with it. The extension's source is public, so any change in behavior can be checked directly against the code rather than taken on faith.</p>
+    </section>
+  </article>
+
+  <footer>
+    <span class="brandmark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="14" height="14" rx="4" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1.2"/>
+        <path d="M4.5 8.4 6.8 10.6 11.5 5.6" stroke="var(--accent-strong)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Full Page Capture
+    </span>
+    <span>Questions about this policy can be sent to the address listed on the extension's store page.</span>
+  </footer>
+</div>
+</body>
+</html>
